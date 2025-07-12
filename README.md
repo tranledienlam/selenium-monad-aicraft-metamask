@@ -126,7 +126,7 @@ Trong trường hợp quá trình tải tự động thất bại, tool sẽ m�
   ai_bot|<AI_BOT_TOKEN>
   ```
 
-Trong đó: `ENDPOINT_URL (tuỳ chọn)` là server trung gian khi Telegram bị chặn (tại VN).
+Trong đó: `ENDPOINT_URL (tuỳ chọn)` là server trung gian nếu Telegram bị chặn.
 
 - Ví dụ:
   ```plaintext
@@ -223,8 +223,8 @@ browser_manager.run_terminal(
 ### 1️⃣ Cấu hình `tele_bot` trong file `token.txt` để theo dõi lỗi.
 
 - Mỗi dự án có một bot Telegram riêng, giúp theo dõi lỗi dễ dàng hơn.
-- **Hướng dẫn lấy token Telegram:** Truy cập [channel](https://t.me/+8o9ebAT9ZSFlZGNl), tìm bài viết `Cách lấy thông tin cho file token.txt`.
-- **Hướng dẫn lấy ENDPOINT_URL:** (cập nhật sau, trước đó, bạn có thể chạy VPN client trên máy tính hoặc bỏ quả chức năng này)
+- **Hướng dẫn lấy token Telegram:** Truy cập [channel](https://t.me/+8o9ebAT9ZSFlZGNl), tìm bài viết `Cách lấy thông tin cho file token.txt`. [Video hướng dẫn](https://www.youtube.com/watch?v=2lAiI-s04gY&t=6s)
+- **Hướng dẫn lấy ENDPOINT_URL:** [Video hướng dẫn](https://www.youtube.com/watch?v=2lAiI-s04gY&t=115s)
 
 ### 2️⃣ Cấu hình `ai_bot` trong file `token.txt` khi tool cần thực hiện chức năng riêng biệt.
 
