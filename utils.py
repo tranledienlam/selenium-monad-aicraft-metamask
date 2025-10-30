@@ -311,13 +311,24 @@ class Utility:
         Raises:
             TimeoutError: Nếu vượt quá thời gian chờ mà profile vẫn bị khóa.
         """
+        # Kiểm tra nếu file lock tồn tại quá 12h thì xóa file
+        if os.path.exists(lock_path):
+            try:
+                ctime = os.path.getctime(lock_path)
+                now = time.time()
+                # Xóa lock, nếu đã tồn tại hơn 12 tiếng
+                if now - ctime > 43200:  # 12h = 43200 giây
+                    os.remove(lock_path)
+            except Exception as e:
+                Utility.logger(profile_name, f"Lỗi khi kiểm tra/xóa file lock: {e}")
+
         start_time = time.time()
         while os.path.exists(lock_path):
             if time.time() - start_time > timeout:
                 raise TimeoutError(f"Chờ quá lâu nhưng profile {profile_name} vẫn bị khóa.")
             print(f"🔒 Profile [{profile_name}] đang bận, chờ...")
-            Utility.wait_time(5, True)
-
+            Utility.wait_time(10, True)
+            
     @staticmethod
     def lock_profile(lock_path: Path):
         """
